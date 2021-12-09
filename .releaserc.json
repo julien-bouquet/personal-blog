@@ -1,0 +1,16 @@
+{
+    "tagFormat": "${version}",
+    "branches": [ "main" ],
+    "repositoryUrl": "https://github.com/julien-bouquet/personal-blog.git",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/exec",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      ["@semantic-release/git", {
+        "assets": ["**/pom.xml", "CHANGELOG.md"],
+        "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
+      }],
+      "@semantic-release/github"
+    ]
+  }
