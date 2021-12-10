@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           # Token is used to push on main branch
-          submodules: false  # Fetch Hugo themes (true OR recursive)
+          submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
       - name: Setup gcloud CLI
@@ -25,6 +25,15 @@ jobs:
           project_id: ${{ secrets.GCP_PROJECT }}
           service_account_key: ${{ secrets.SA_KEY }}
           export_default_credentials: true
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.90.0'
+      
+      - name: Build
+        run: hugo
+
 
       - name: Semantic Release
         id: semantic
@@ -40,21 +49,13 @@ jobs:
             @semantic-release/git@9.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: '0.85.0'
       
-      - name: Build
-        run: hugo --minify
 
       - name: Upload Pupblic dir on Google Cloud Storage
         if: steps.semantic.outputs.new_release_published == 'true'
         uses: google-github-actions/upload-cloud-storage@v0.4.0
         with:
           path: public
-          destination: ${{ secrets.BUCKET }}
-          glob: "*"
+          destination: ${{ secrets.BUCKET_NAME }}
           gzip: false
           parent: false
