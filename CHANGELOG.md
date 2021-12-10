@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/julien-bouquet/personal-blog/compare/1.0.0...1.1.0) (2021-12-10)
+
+
+### Features
+
+* improve release/deployment workflow ([31fc43d](https://github.com/julien-bouquet/personal-blog/commit/31fc43d5627a9fffef3b548705d01a86d54a5e58))
+
 # 1.0.0 (2021-12-09)
 
 
