@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/julien-bouquet/personal-blog/compare/1.1.0...1.2.0) (2021-12-31)
+
+
+### Features
+
+* add publish docker in cd ([294957e](https://github.com/julien-bouquet/personal-blog/commit/294957e2b556a988387d6c7336fce6d73852e8d0))
+* deploy on GAE ([11a727c](https://github.com/julien-bouquet/personal-blog/commit/11a727c04ac9abdbc83861b80d79556af6f32d68))
+
 # [1.2.0](https://github.com/julien-bouquet/personal-blog/compare/1.1.0...1.2.0) (2021-12-13)
 
 
