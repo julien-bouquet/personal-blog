@@ -1,7 +1,7 @@
 ---
 title: "Mainteneur sur un petit projet pendant Hacktoberfest"
 date: 2021-11-24T00:00:00+01:00
-tags: ["hacktoberfest", "opensource", "french"]
+tags: ["hacktoberfest", "opensource", "rex"]
 ---
 
 Cette année, j’ai décidé de participer à l’Hacktoberfest en tant que mainteneur. J’y ai proposé 2 projets : d’une part je suis devenu récemment co-mainteneur d’un projet Python récupérant des datas sur des NAS (plugin pour Home assistant)`https://github.com/colinodell/python-qnapstats`, et d ‘autre part j’ai créé une API en Golang avec une architecture Hexagonale `https://github.com/julien-bouquet/geo-api`

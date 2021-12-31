@@ -1,6 +1,6 @@
 {
     "tagFormat": "${version}",
-    "branches": [ "main" ],
+    "branches": [ "main", "test" ],
     "repositoryUrl": "https://github.com/julien-bouquet/personal-blog.git",
     "plugins": [
       "@semantic-release/commit-analyzer",
@@ -11,6 +11,9 @@
         "assets": ["CHANGELOG.md"],
         "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
       }],
-      "@semantic-release/github"
+      ["@semantic-release/github", {
+        "name": "Source Static Site",
+        "path": "public"
+      }]
     ]
   }

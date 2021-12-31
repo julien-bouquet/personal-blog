@@ -1,4 +1,5 @@
 baseURL: "https://www.julienbouquet.me/"
+languageCode: "en-us"
 title: Julien Bouquet - Personal Blog
 paginate: 5
 theme: PaperMod
@@ -7,21 +8,19 @@ enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
-
-# googleAnalytics: UA-123-45
+uglyURLs: true
 
 minify:
-    disableXML: true
-    minifyOutput: true
+  disableXML: true
+  minifyOutput: true
 
 params:
-    env: dev # to enable google analytics, opengraph, twitter-cards and schema.
+    env: production # to enable google analytics, opengraph, twitter-cards and schema.
     title: Julien Bouquet - Personal Blog
     description: "Julien Bouquet - Personal Blog"
     keywords: [Blog, Portfolio, PaperMod]
     author: Me
-    # author: ["Me", "You"] # multiple authors
-    images: ["https://ws.aboshop.fr/aboweb/downloadservice/aboshop/epsiloon/products/3/covers/1.png"]
+    
     DateFormat: "January 2, 2006"
     defaultTheme: auto # dark, light
     disableThemeToggle: false
@@ -33,11 +32,12 @@ params:
     ShowCodeCopyButtons: false
     disableSpecial1stPost: false
     disableScrollToTop: false
-    comments: false
+    comments: true
     hidemeta: false
     hideSummary: false
     showtoc: false
     tocopen: false
+
 
     assets:
         # disableHLJS: true # to disable highlight.js
@@ -61,8 +61,10 @@ params:
         imageHeight: 120
         imageTitle: my image
         buttons:
-            - name: Posts
-              url: posts
+          - name: Posts
+            url: posts
+          - name: Tags
+            url: tags
 
     # home-info mode
     homeInfoParams:
@@ -70,13 +72,16 @@ params:
         Content: 
           Welcome to my blog,
 
-          I'm web developper since 3 years at SFEIR Lille. 
+          I’m a French developer, 
+          I create this blog to share my experience and some best practices on development. 
+          I like Open Source, I love contributing and have contributions on my repositories to learn from other developers.  
+
 
     socialIcons:
         - name: twitter
           url: "https://twitter.com/julien-bouquet"
         - name: stackoverflow
-          url: "https://stackoverflow.com"
+          url: "https://stackoverflow.com/users/7143453/julien-bouquet"
         - name: github
           url: "https://github.com/julien-bouquet"
 
@@ -94,9 +99,9 @@ params:
         hiddenInSingle: true # hide on single page
 
     editPost:
-        URL: "https://github.com/julien-bouquet/personal-blog/content"
+        URL: "https://github.com/julien-bouquet/personal-blog/issues"
         Text: "Suggest Changes" # edit text
-        appendFilePath: true # to append file path to Edit link
+        appendFilePath: false # to append file path to Edit link
 
     # for search
     # https://fusejs.io/api/options.html
@@ -109,7 +114,16 @@ params:
         minMatchCharLength: 0
         keys: ["title", "permalink", "summary", "content"]
 
-        
+menu:
+  main:
+    - identifier: posts
+      name: posts
+      weight: 20
+      
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 20
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
 # markup:
@@ -119,4 +133,3 @@ params:
 #         guessSyntax: true
 #         lineNos: true
 #         style: monokai
-
