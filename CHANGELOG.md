@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/julien-bouquet/personal-blog/compare/1.2.0...1.2.1) (2021-12-31)
+
+
+### Bug Fixes
+
+* assets ([9d71494](https://github.com/julien-bouquet/personal-blog/commit/9d714944827143b204e191c564c6f1a286fac3ac))
+
 # [1.2.0](https://github.com/julien-bouquet/personal-blog/compare/1.1.0...1.2.0) (2021-12-31)
 
 
