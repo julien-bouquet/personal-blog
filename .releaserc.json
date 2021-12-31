@@ -11,9 +11,11 @@
         "assets": ["CHANGELOG.md"],
         "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
       }],
-      ["@semantic-release/github", {
+      ["@semantic-release/github",{
+        "assets": [{
         "name": "Source Static Site",
-        "path": "public"
-      }]
+        "path": "public"}
+      ]}
     ]
-  }
+  ]
+}
